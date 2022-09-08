@@ -3,18 +3,21 @@ package br.com.alura.orgs.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import br.com.alura.orgs.R
 import br.com.alura.orgs.dao.ProdutosDao
+import br.com.alura.orgs.databinding.ActivityListaProdutosBinding
 import br.com.alura.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListaProdutosActivity : AppCompatActivity(R.layout.activity_lista_produtos) {
-    val dao = ProdutosDao()
+class ListaProdutosActivity : AppCompatActivity() {
+
+    private val dao = ProdutosDao()
     private val adapter = ListaProdutosAdapter(context = this, produtos = dao.buscaTodos())
+    private val binding by lazy {
+        ActivityListaProdutosBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
         configuraRecyclerView()
         configuraFab()
     }
@@ -24,24 +27,21 @@ class ListaProdutosActivity : AppCompatActivity(R.layout.activity_lista_produtos
         adapter.atualiza(dao.buscaTodos())
     }
 
-    private fun configuraRecyclerView(){
-
-        val recyclerView = findViewById<RecyclerView>(R.id.activity_lista_produtos_recyclerView)
-        recyclerView.adapter = adapter
-    }
-
-    private fun configuraFab(){
-        val fab = findViewById<FloatingActionButton>(R.id.activity_lista_produtos_floatingActionButton)
+    private fun configuraFab() {
+        val fab = binding.activityListaProdutosFloatingActionButton
         fab.setOnClickListener {
             vaiParaFormularioProduto()
         }
     }
 
-    private fun vaiParaFormularioProduto(){
+    private fun vaiParaFormularioProduto() {
         val intent = Intent(this, FormularioProdutoActivity::class.java)
         startActivity(intent)
     }
 
-    //comentario teste
+    private fun configuraRecyclerView() {
+        val recyclerView = binding.activityListaProdutosRecyclerView
+        recyclerView.adapter = adapter
+    }
 
 }
