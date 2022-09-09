@@ -58,15 +58,22 @@
         app:layout_constraintTop_toBottomOf="@id/activity_formulario_produto_descricao"
         tools:text="19.99" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"
+        android:id="@+id/guideline"/>
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activity_formulario_produto_nome"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
         app:srcCompat="@drawable/frutas"
