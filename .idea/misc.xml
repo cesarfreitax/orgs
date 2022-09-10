@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_formulario_produto.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.102" />
+        <entry key="app/src/main/res/layout/activity_formulario_imagem.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_formulario_produto.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_lista_produtos.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/produto_item.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/produto_item.xml" value="0.25" />
       </map>
     </option>
   </component>
