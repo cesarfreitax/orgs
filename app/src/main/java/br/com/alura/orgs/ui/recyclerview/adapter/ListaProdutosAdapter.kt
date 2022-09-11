@@ -32,7 +32,7 @@ class ListaProdutosAdapter(
             val valor = binding.activityFormularioProdutoValor
             val valorEmMoeda: String = formataParaMoedaBrasileira(produto.valor)
             valor.text = valorEmMoeda
-            binding.produtoItemImagem.load("https://imagensemoldes.com.br/wp-content/uploads/2020/05/Laranja-PNG.png")
+            binding.produtoItemImagem.load(produto.imagem)
         }
 
         private fun formataParaMoedaBrasileira(valor: BigDecimal): String {

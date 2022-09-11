@@ -5,8 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import br.com.alura.orgs.R
 import br.com.alura.orgs.dao.ProdutosDao
+import br.com.alura.orgs.databinding.ActivityFormularioImagemBinding
 import br.com.alura.orgs.databinding.ActivityFormularioProdutoBinding
 import br.com.alura.orgs.model.Produto
+import coil.load
 import java.math.BigDecimal
 
 class FormularioProdutoActivity : AppCompatActivity() {
@@ -15,15 +17,23 @@ class FormularioProdutoActivity : AppCompatActivity() {
         ActivityFormularioProdutoBinding.inflate(layoutInflater)
     }
 
+    private var url: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         configuraBotaoSalvar()
         binding.activityFormularioProdutoImagem.setOnClickListener {
+            val bindingImagem = ActivityFormularioImagemBinding.inflate(layoutInflater)
+            bindingImagem.activityFormularioImagemBotao.setOnClickListener{
+                val url = bindingImagem.activityFormularioUrl.text.toString()
+                bindingImagem.activityFormularioImagemImageview.load(url)
+            }
             AlertDialog.Builder(this)
-                .setView(R.layout.activity_formulario_imagem)
+                .setView(bindingImagem.root)
                 .setPositiveButton("Confirmar") { _,_ ->
-
+                    url = bindingImagem.activityFormularioUrl.text.toString()
+                    binding.activityFormularioProdutoImagem.load(url)
                 }
                 .setNegativeButton("Cancelar") { _,_ ->
 
@@ -58,7 +68,8 @@ class FormularioProdutoActivity : AppCompatActivity() {
         return Produto(
             nome = nome,
             descricao = descricao,
-            valor = valor
+            valor = valor,
+            imagem = url
         )
     }
 

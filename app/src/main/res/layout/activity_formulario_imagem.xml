@@ -43,6 +43,7 @@
             app:layout_constraintTop_toBottomOf="@id/activity_formulario_imagem_botao">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_formulario_url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="URL da imagem"
