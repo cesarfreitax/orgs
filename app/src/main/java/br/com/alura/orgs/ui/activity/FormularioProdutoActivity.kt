@@ -28,6 +28,7 @@ class FormularioProdutoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        title = "Cadastrar produto"
         configuraBotaoSalvar()
         val ImageLoader = ImageLoader.Builder(this)
             .components {
