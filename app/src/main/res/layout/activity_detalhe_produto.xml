@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.activity.DetalheProdutoActivity">
+
+        <ImageView
+            android:id="@+id/activity_detalhe_produto_imagem"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            android:contentDescription="Imagem do produto" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/activity_detalhe_produto_card_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/activity_detalhe_produto_imagem"
+            app:layout_constraintTop_toBottomOf="@id/activity_detalhe_produto_imagem"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="25dp">
+            <TextView
+                android:id="@+id/activity_detalhe_produto_valor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="R$ 1.000,00"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_green_dark"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/activity_detalhe_produto_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Um titulo qualquer so para testar o tamanho da fonte e etc"
+            app:layout_constraintTop_toBottomOf="@id/activity_detalhe_produto_card_valor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp"
+            android:textSize="28sp"/>
+
+        <TextView
+            android:id="@+id/activity_detalhe_produto_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@tools:sample/lorem/random"
+            app:layout_constraintTop_toBottomOf="@id/activity_detalhe_produto_titulo"
+            app:layout_constraintStart_toStartOf="@id/activity_detalhe_produto_titulo"
+            app:layout_constraintEnd_toEndOf="@id/activity_detalhe_produto_titulo"
+            android:textSize="20sp"
+            android:layout_margin="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

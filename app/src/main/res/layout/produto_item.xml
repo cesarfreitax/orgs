@@ -1,78 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_produto_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="8dp">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/activity_formulario_produto_nome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:lines="1"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/produto_item_imagem"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@tools:sample/lorem/random" />
+        <TextView
+            android:id="@+id/activity_formulario_produto_nome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/bangers"
+            android:lines="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/produto_item_imagem"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem/random" />
 
-    <TextView
-        android:id="@+id/activity_formulario_produto_descricao"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_regular"
-        android:textSize="14sp"
-        android:maxLines="1"
-        android:ellipsize="end"
-        app:layout_constraintEnd_toEndOf="@id/activity_formulario_produto_nome"
-        app:layout_constraintStart_toStartOf="@id/activity_formulario_produto_nome"
-        app:layout_constraintTop_toBottomOf="@id/activity_formulario_produto_nome"
-        tools:text="@tools:sample/lorem/random" />
+        <TextView
+            android:id="@+id/activity_formulario_produto_descricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/bangers"
+            android:maxLines="1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/activity_formulario_produto_nome"
+            app:layout_constraintStart_toStartOf="@id/activity_formulario_produto_nome"
+            app:layout_constraintTop_toBottomOf="@id/activity_formulario_produto_nome"
+            tools:text="@tools:sample/lorem/random" />
 
-    <TextView
-        android:id="@+id/activity_formulario_produto_valor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_regular"
-        android:layout_marginTop="8dp"
-        android:textColor="@android:color/holo_green_dark"
-        android:layout_marginBottom="16dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/activity_formulario_produto_nome"
-        app:layout_constraintStart_toStartOf="@id/activity_formulario_produto_nome"
-        app:layout_constraintTop_toBottomOf="@id/activity_formulario_produto_descricao"
-        tools:text="19.99" />
+        <TextView
+            android:id="@+id/activity_formulario_produto_valor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/bangers"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/activity_formulario_produto_nome"
+            app:layout_constraintStart_toStartOf="@id/activity_formulario_produto_nome"
+            app:layout_constraintTop_toBottomOf="@id/activity_formulario_produto_descricao"
+            tools:text="19.99" />
 
-    <ImageView
-        android:id="@+id/produto_item_imagem"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/activity_formulario_produto_nome"
-        app:layout_constraintWidth_percent="0.3"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        app:srcCompat="@drawable/frutas"
-         />
+        <ImageView
+            android:id="@+id/produto_item_imagem"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/activity_formulario_produto_nome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3"
+            app:srcCompat="@drawable/frutas"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
