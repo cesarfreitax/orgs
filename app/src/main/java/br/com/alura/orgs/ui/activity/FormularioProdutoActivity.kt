@@ -8,6 +8,7 @@ import br.com.alura.orgs.R
 import br.com.alura.orgs.dao.ProdutosDao
 import br.com.alura.orgs.databinding.ActivityFormularioImagemBinding
 import br.com.alura.orgs.databinding.ActivityFormularioProdutoBinding
+import br.com.alura.orgs.extensions.tentaCarregarImagem
 import br.com.alura.orgs.model.Produto
 import coil.ImageLoader
 import coil.decode.GifDecoder
@@ -40,13 +41,13 @@ class FormularioProdutoActivity : AppCompatActivity() {
             val bindingImagem = ActivityFormularioImagemBinding.inflate(layoutInflater)
             bindingImagem.activityFormularioImagemBotao.setOnClickListener{
                  val url = bindingImagem.activityFormularioUrl.text.toString()
-                bindingImagem.activityFormularioImagemImageview.load(url, ImageLoader)
+                bindingImagem.activityFormularioImagemImageview.tentaCarregarImagem(url, ImageLoader)
             }
             AlertDialog.Builder(this)
                 .setView(bindingImagem.root)
                 .setPositiveButton("Confirmar") { _,_ ->
                     url = bindingImagem.activityFormularioUrl.text.toString()
-                    binding.activityFormularioProdutoImagem.load(url, ImageLoader)
+                    binding.activityFormularioProdutoImagem.tentaCarregarImagem(url, ImageLoader)
                 }
                 .setNegativeButton("Cancelar") { _,_ ->
 
