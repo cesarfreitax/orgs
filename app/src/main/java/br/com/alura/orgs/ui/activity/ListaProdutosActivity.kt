@@ -20,6 +20,15 @@ class ListaProdutosActivity : AppCompatActivity() {
         setContentView(binding.root)
         configuraRecyclerView()
         configuraFab()
+        configuraSwipeRefresh()
+    }
+
+    private fun configuraSwipeRefresh() {
+        val refresh = binding.activityListaProdutosSwipeRefresh
+        refresh.setOnRefreshListener {
+            dao.buscaTodos()
+            refresh.isRefreshing = false
+        }
     }
 
     override fun onResume() {
