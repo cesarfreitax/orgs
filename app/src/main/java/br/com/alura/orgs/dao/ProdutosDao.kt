@@ -1,5 +1,6 @@
 package br.com.alura.orgs.dao
 
+import br.com.alura.orgs.databinding.ActivityListaProdutosBinding
 import br.com.alura.orgs.model.Produto
 import java.math.BigDecimal
 
@@ -10,6 +11,7 @@ class ProdutosDao {
     }
 
     fun buscaTodos() : List<Produto> {
+
         return produtos.toList()
     }
 
