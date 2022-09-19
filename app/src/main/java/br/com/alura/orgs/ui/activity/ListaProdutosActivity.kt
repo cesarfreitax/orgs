@@ -2,10 +2,13 @@ package br.com.alura.orgs.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import br.com.alura.orgs.database.AppDatabase
 import br.com.alura.orgs.databinding.ActivityListaProdutosBinding
 import br.com.alura.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
+
+private const val TAG = "ListaProdutosActivity"
 
 class ListaProdutosActivity : AppCompatActivity() {
 
@@ -62,6 +65,14 @@ class ListaProdutosActivity : AppCompatActivity() {
                         putExtra(CHAVE_PRODUTO, it)
             }
             startActivity(intent)
+        }
+
+        adapter.quandoClicaEmEditar = {
+            Log.i(TAG, "configuraRecyclerView: Editar $it")
+        }
+        
+        adapter.quandoClicaEmExcluir = {
+            Log.i(TAG, "configuraRecyclerView: Excluir $it")
         }
 
     }
