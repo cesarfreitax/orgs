@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import br.com.alura.orgs.R
+import br.com.alura.orgs.database.AppDatabase
 import br.com.alura.orgs.databinding.ActivityDetalheProdutoBinding
 import br.com.alura.orgs.extensions.formataParaMoedaBrasileira
 import br.com.alura.orgs.extensions.tentaCarregarImagem
@@ -14,6 +15,7 @@ import br.com.alura.orgs.model.Produto
 class DetalheProdutoActivity : AppCompatActivity() {
 
 
+    private lateinit var produto: Produto
     private val binding by lazy {
         ActivityDetalheProdutoBinding.inflate(layoutInflater)
     }
@@ -30,12 +32,17 @@ class DetalheProdutoActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.menu_detalhes_produto_editar -> {
-                Log.i("DetalheProdutoActivity", "onOptionsItemSelected: Editar")
-            }
-            R.id.menu_detalhes_produto_excluir -> {
-                Log.i("DetalheProdutoActivity", "onOptionsItemSelected: Excluir")
+        if(::produto.isInitialized) {
+            val db = AppDatabase.instancia(this)
+            val produtoDao = db.produtoDao()
+            when (item.itemId) {
+                R.id.menu_detalhes_produto_editar -> {
+                   // DEVE EDITAR O PRODUTO
+                }
+                R.id.menu_detalhes_produto_excluir -> {
+                    produtoDao.exclui(produto)
+                    finish()
+                }
             }
         }
         return super.onOptionsItemSelected(item)
@@ -43,6 +50,7 @@ class DetalheProdutoActivity : AppCompatActivity() {
 
     private fun tentaCarregarProduto() {
         intent.getParcelableExtra<Produto>(CHAVE_PRODUTO)?.let { produtoCarregado ->
+            produto = produtoCarregado
             preencheCampos(produtoCarregado)
         } ?: finish()
     }
