@@ -3,18 +3,13 @@ package br.com.alura.orgs.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.room.Room
-import br.com.alura.orgs.dao.ProdutosDao
 import br.com.alura.orgs.database.AppDatabase
 import br.com.alura.orgs.databinding.ActivityListaProdutosBinding
-import br.com.alura.orgs.model.Produto
 import br.com.alura.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
-import java.math.BigDecimal
 
 class ListaProdutosActivity : AppCompatActivity() {
 
-    private val dao = ProdutosDao()
-    private val adapter = ListaProdutosAdapter(context = this, produtos = dao.buscaTodos())
+    private val adapter = ListaProdutosAdapter(context = this)
     private val binding by lazy {
         ActivityListaProdutosBinding.inflate(layoutInflater)
     }
@@ -30,7 +25,9 @@ class ListaProdutosActivity : AppCompatActivity() {
     private fun configuraSwipeRefresh() {
         val refresh = binding.activityListaProdutosSwipeRefresh
         refresh.setOnRefreshListener {
-            dao.buscaTodos()
+            val db = AppDatabase.instancia(this)
+            val produtoDao = db.produtoDao()
+            adapter.atualiza(produtoDao.buscaTodos())
             refresh.isRefreshing = false
         }
     }
