@@ -5,12 +5,13 @@
       <map>
         <entry key="app/src/main/res/drawable/arredondado.xml" value="0.135" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.102" />
+        <entry key="app/src/main/res/font/bangers.xml" value="0.22752216124947236" />
         <entry key="app/src/main/res/layout/activity_detalhe_produto.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_formulario_imagem.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_formulario_produto.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_lista_produtos.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/produto_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/produto_item.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_detalhes_produto.xml" value="0.17238183503243745" />
       </map>
     </option>
